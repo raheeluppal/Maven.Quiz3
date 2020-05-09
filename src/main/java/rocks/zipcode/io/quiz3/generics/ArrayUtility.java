@@ -5,26 +5,41 @@ import java.util.function.Function;
 /**
  * @author leon on 09/12/2018.
  */
-public class ArrayUtility<SomeType> {
-    private final SomeType[] array;
+public class ArrayUtility<T> {
+    private final T[] array;
 
-    public ArrayUtility(SomeType[] array) {
+    public ArrayUtility(T[] array) {
         this.array = array;
     }
 
-    public SomeType findOddOccurringValue() {
+    public T findOddOccurringValue() {
+        for(T t : array){
+            if(getNumberOfOccurrences(t) %2 != 0){
+                return t;
+            }
+        }
         return null;
     }
 
-    public SomeType findEvenOccurringValue() {
+    public T findEvenOccurringValue() {
+        for(T t : array){
+            if(getNumberOfOccurrences(t) %2 == 0){
+                return t;
+            }
+        }
         return null;
     }
 
-    public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
-        return null;
+    public int getNumberOfOccurrences(T valueToEvaluate) {
+        int count = 0;
+        for (T t : array) {
+            if (valueToEvaluate.equals(t))
+                count++;
+        }
+        return count;
     }
 
-    public SomeType[] filter(Function<SomeType, Boolean> predicate) {
+    public T[] filter(Function<T, Boolean> predicate) {
         return null;
     }
 }

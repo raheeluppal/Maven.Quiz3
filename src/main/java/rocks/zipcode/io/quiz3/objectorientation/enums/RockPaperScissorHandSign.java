@@ -13,7 +13,7 @@ public enum RockPaperScissorHandSign {
 
 
     public RockPaperScissorHandSign getWinner() {
-            return null;
+        return null;
         }
 
         public RockPaperScissorHandSign getLoser() {
